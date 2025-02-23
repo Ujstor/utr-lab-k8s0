@@ -1,0 +1,6 @@
+dependencies:
+- name: cilium
+  repository: oci://harbor.k3s0.ujstor.com/helm
+  version: 1.0.0
+digest: sha256:a622b8f7f371021f69ffe9186a51b6107b032cd14b824ab14317ad57aa025599
+generated: "2025-02-09T02:41:13.418918482+01:00"

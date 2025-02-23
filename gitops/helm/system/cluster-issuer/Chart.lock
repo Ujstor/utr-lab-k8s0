@@ -1,0 +1,6 @@
+dependencies:
+- name: cluster-issuer
+  repository: oci://harbor.k3s0.ujstor.com/helm
+  version: 1.0.0
+digest: sha256:73e495083634a19cedd2e7b74118a1a093b5938a3a34c3e6ad367470c29b4836
+generated: "2025-02-09T02:41:13.400012845+01:00"

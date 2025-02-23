@@ -1,0 +1,5 @@
+ingress-nginx:
+  nginx:
+    controller:
+      extraArgs:
+        default-ssl-certificate: ingress-nginx/letsencrypt-secret-prod

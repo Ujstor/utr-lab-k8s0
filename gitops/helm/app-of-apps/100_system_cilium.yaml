@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: system-cilium-lab-k8s0
+  namespace: gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  destination:
+    namespace: kube-system
+    server: https://kubernetes.default.svc
+  project: ops-cluster-bootstrap
+  source:
+    path: gitops/helm/system/cilium
+    repoURL: https://gitlab.k3s0.ujstor.com/clusters/customer-ujstor/utr-lab-k8s0.git
+    targetRevision: main
+    helm:
+      version: v3
+      releaseName: cilium
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - ServerSideApply=true

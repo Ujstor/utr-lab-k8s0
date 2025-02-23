@@ -1,0 +1,5 @@
+cilium-k3s:
+  cilium:
+    k8sServiceHost: api.utr.lab.k8s0.ujstor.dev
+    operator:
+      replicas: 1

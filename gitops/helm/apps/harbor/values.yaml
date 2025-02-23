@@ -1,0 +1,7 @@
+harbor-lab-k8s0:
+  harbor:
+    expose:
+      ingress:
+        hosts:
+          core: harbor.utr.lab.k8s0.ujstor.dev
+    externalURL: https://harbor.utr.lab.k8s0.ujstor.dev

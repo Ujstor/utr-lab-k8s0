@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-harbor-lab-k8s0
+  namespace: gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "14"
+spec:
+  destination:
+    namespace: harbor
+    server: https://kubernetes.default.svc
+  project: ops-cluster-bootstrap
+  source:
+    path: gitops/helm/apps/harbor
+    repoURL: https://gitlab.k3s0.ujstor.com/clusters/customer-ujstor/utr-lab-k8s0.git
+    targetRevision: main
+    helm:
+      version: v3
+      releaseName: harbor
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - RespectIgnoreDifferences=true
