@@ -1,6 +1,6 @@
 dependencies:
 - name: harbor
   repository: oci://harbor.k3s0.ujstor.com/helm
-  version: 1.1.0
-digest: sha256:7b53f545300dae50ec50021831feefc2c149a0c787011cdcc954d12091ecbb1e
-generated: "2025-02-09T02:41:13.397667505+01:00"
+  version: 1.1.1
+digest: sha256:fb8ecc715df22bdfeb281286656ae7d344f8088c8b71676447d79ae5aa8782dc
+generated: "2025-02-24T00:51:19.548607958+01:00"
