@@ -12,7 +12,7 @@ spec:
   destination:
     namespace: cert-manager
     server: https://kubernetes.default.svc
-  project: ops-cluster-bootstrap
+  project: default
   source:
     path: gitops/helm/system/cert-manager
     repoURL: https://gitlab.k3s0.ujstor.com/clusters/customer-ujstor/utr-lab-k8s0.git
