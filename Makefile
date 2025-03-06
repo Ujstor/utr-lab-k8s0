@@ -11,7 +11,7 @@ CHART_DIR_SYSTEM_K8S0 := gitops/helm/system
 CHART_DIR_APPS_K8S0 := gitops/helm/apps
 
 # k8s0-ops cluster packages
-CHART_SYSTEM_K8S0 := cert-manager cilium ingress-nginx argocd cluster-issuer external-secrets metallb-operator metallb-config
+CHART_SYSTEM_K8S0 := cert-manager cilium ingress-nginx argocd cluster-issuer external-secrets metallb-operator metallb-config kyverno
 CHART_APPS_K8S0 := harbor
 
 # Define pattern rules for k8s0

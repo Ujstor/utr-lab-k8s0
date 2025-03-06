@@ -1,0 +1,6 @@
+dependencies:
+- name: kyverno
+  repository: oci://harbor.k3s0.ujstor.com/helm
+  version: 1.0.3
+digest: sha256:3753f709d94ea71e16631a1fd96ef6a6055bcacd2f5dbbb2a0a4b559bb8e45bb
+generated: "2025-03-04T22:11:22.702246088+01:00"

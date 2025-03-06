@@ -1,0 +1,11 @@
+apiVersion: v2
+name: Kyverno
+description: Kyverno Helm chart by Ujstor
+type: application
+version: 1.0.3
+appVersion: "1.13.4"
+
+dependencies:
+- name: kyverno
+  version: 1.0.3
+  repository: "oci://harbor.k3s0.ujstor.com/helm"

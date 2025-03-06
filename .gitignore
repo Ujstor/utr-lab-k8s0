@@ -46,3 +46,4 @@ letsencrypt/
 
 terraform-cron.log
 oauth.yaml
+secret.yaml
