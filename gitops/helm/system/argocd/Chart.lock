@@ -1,6 +1,9 @@
 dependencies:
 - name: argo-cd
   repository: oci://harbor.k3s0.ujstor.com/helm
+  version: 1.1.2
+- name: secret-store
+  repository: oci://harbor.k3s0.ujstor.com/helm
   version: 1.0.0
-digest: sha256:f9a3c1a34f102b15f1f04bb690511368ad8adbff056b01e51005378e0447900b
-generated: "2025-02-09T02:41:13.424224262+01:00"
+digest: sha256:e401e3ba1bb7df7cae763854bc36c472cc3f037bbf97a09fe6f7fdbb3a90247b
+generated: "2025-03-12T19:42:03.991006224+01:00"

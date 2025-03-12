@@ -22,15 +22,26 @@ argocd-k3s:
 
     configs:
       secret:
-        createSecret: false
+        createSecret: true
       cm:
         oidc.config: |
           name: Keycloak
           issuer: https://auth.k3s0.ujstor.com/realms/master
+          clientSecret: $oidc.keycloak.clientSecrety
           clientID: argo-lab-k8s0-oauth
-          clientSecret: $kycloack-argo-client:clientSecret
           requestedScopes: ["openid", "profile", "email", "groups"]
       rbac:
         policy.csv: |
           g, ArgoCDAdmins, role:admin
         scopes: "[groups]"
+
+secret-store:
+  secretStore:
+    clusterWide: false
+    provider:
+      type: kubernetes
+      kubernetes:
+        auth:
+          serviceAccount:
+            create: true
+            name: "argocd-store-sa"
