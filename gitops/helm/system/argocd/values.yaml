@@ -28,7 +28,7 @@ argocd-k3s:
           name: Keycloak
           issuer: https://auth.k3s0.ujstor.com/realms/master
           clientID: argo-ops-k8s0-oauth
-          clientSecret: $kycloack-argo-client:clientSecret
+          clientSecret: $oidc.keycloak.clientSecret
           requestedScopes: ["openid", "profile", "email", "groups"]
       rbac:
         policy.csv: |
