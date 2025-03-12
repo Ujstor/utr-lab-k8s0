@@ -19,3 +19,18 @@ argocd-k3s:
       enabled: false
       haproxy:
         enabled: false
+
+    configs:
+      secret:
+        createSecret: false
+      cm:
+        oidc.config: |
+          name: Keycloak
+          issuer: https://auth.k3s0.ujstor.com/realms/master
+          clientID: argo-ops-k8s0-oauth
+          clientSecret: $kycloack-argo-client:clientSecret
+          requestedScopes: ["openid", "profile", "email", "groups"]
+      rbac:
+        policy.csv: |
+          g, ArgoCDAdmins, role:admin
+        scopes: "[groups]"
