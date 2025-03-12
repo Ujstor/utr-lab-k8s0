@@ -27,7 +27,7 @@ argocd-k3s:
         oidc.config: |
           name: Keycloak
           issuer: https://auth.k3s0.ujstor.com/realms/master
-          clientID: argo-ops-k8s0-oauth
+          clientID: argo-lab-k8s0-oauth
           clientSecret: $oidc.keycloak.clientSecret
           requestedScopes: ["openid", "profile", "email", "groups"]
       rbac:
