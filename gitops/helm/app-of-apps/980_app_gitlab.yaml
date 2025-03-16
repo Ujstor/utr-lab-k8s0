@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-gitlab-lab-k8s0
+  namespace: gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  destination:
+    namespace: gitlab
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: gitops/helm/apps/gitlab
+    repoURL: https://gitlab.k3s0.ujstor.com/clusters/customer-ujstor/utr-lab-k8s0.git
+    targetRevision: main
+    helm:
+      version: v3
+      releaseName: gitlab
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

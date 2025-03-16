@@ -1,0 +1,12 @@
+apiVersion: v2
+name: gitlab
+description: Gitlab Helm chart configured by Ujstor
+type: application
+version: 1.4.0
+appVersion: "17.9.2"
+
+dependencies:
+- name: gitlab
+  version: 1.4.0
+  repository: "oci://harbor.k3s0.ujstor.com/helm"
+  alias: gitlab-k3s

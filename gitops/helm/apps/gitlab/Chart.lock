@@ -1,0 +1,6 @@
+dependencies:
+- name: gitlab
+  repository: oci://harbor.k3s0.ujstor.com/helm
+  version: 1.4.0
+digest: sha256:8f78f429305ffe306cfa332ae5c406528fda5acb706be8521045b666d12905f7
+generated: "2025-03-16T18:19:22.687955909+01:00"
