@@ -9,20 +9,8 @@ gitlab-k3s:
         blockAutoCreatedUsers: false
         autoLinkUser: ['openid_connect']
         providers:
-          - name: openid_connect
-            label: Keycloak
-            args:
-              name: openid_connect
-              scope: ['openid', 'profile', 'email']
-              response_type: code
-              issuer: 'https://auth.k3s0.ujstor.com/realms/master'
-              discovery: true
-              client_auth_method: query
-              uid_field: preferred_username
-              client_options:
-                identifier: gitlab-lab-k8s0-oauth
-                secret: SJ9SMQ29pdABQg44PGGMDPdqL5339GOB
-                redirect_uri: 'https://gitlab.utr.lab.k8s0.ujstor.dev/users/auth/openid_connect/callback'
+          - secret: gitlab-lab-k8s0-oauth-secret
+            key: provider
   additionalValues:
     certmanager-issuer:
       email: "astipan@mail.com"
