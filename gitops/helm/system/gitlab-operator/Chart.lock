@@ -1,0 +1,6 @@
+dependencies:
+- name: gitlab-operator
+  repository: oci://harbor.k3s0.ujstor.com/helm
+  version: 1.2.1
+digest: sha256:3b5f52be78805e0908cc3ee20c2c4886f5df3888a6c7b0e7a3a056292b4890eb
+generated: "2025-03-16T16:07:04.36377496+01:00"

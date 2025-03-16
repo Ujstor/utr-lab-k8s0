@@ -1,0 +1,58 @@
+gitlab-k3s:
+  global:
+    hosts:
+      domain: utr.lab.k8s0.ujstor.dev
+    appConfig:
+      omniauth:
+        enabled: true
+        allowSingleSignOn: ['openid_connect']
+        blockAutoCreatedUsers: false
+        autoLinkUser: ['openid_connect']
+        providers:
+          - name: openid_connect
+            label: Keycloak
+            args:
+              name: openid_connect
+              scope: ['openid', 'profile', 'email']
+              response_type: code
+              issuer: 'https://auth.k3s0.ujstor.com/realms/master'
+              discovery: true
+              client_auth_method: query
+              uid_field: preferred_username
+              client_options:
+                identifier: gitlab-lab-k8s0-oauth
+                secret: SJ9SMQ29pdABQg44PGGMDPdqL5339GOB
+                redirect_uri: 'https://gitlab.utr.lab.k8s0.ujstor.dev/users/auth/openid_connect/callback'
+  additionalValues:
+    certmanager-issuer:
+      email: "astipan@mail.com"
+
+# # config with secret:
+# name: openid_connect
+# label: Keycloak
+# args:
+#   name: openid_connect
+#   scope: ['openid', 'profile', 'email']
+#   response_type: code
+#   issuer: 'https://keycloak.example.com/realms/your-realm'
+#   discovery: true
+#   client_auth_method: query
+#   uid_field: preferred_username
+#   client_options:
+#     identifier: your-client-id
+#     secret: your-client-secret
+#     redirect_uri: 'https://gitlab.example.com/users/auth/openid_connect/callback'
+#
+# kubectl create secret generic gitlab-keycloak-oauth2 --from-file=provider=provider.yaml
+#
+#
+# global:
+#   appConfig:
+#     omniauth:
+#       enabled: true
+#       allowSingleSignOn: ['openid_connect']
+#       blockAutoCreatedUsers: false
+#       autoLinkUser: ['openid_connect']
+#       providers:
+#         - secret: gitlab-keycloak-oauth2
+#           key: provider

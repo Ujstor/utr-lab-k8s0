@@ -1,0 +1,11 @@
+apiVersion: v2
+name: gitlab-operator
+description: Gitlab Operator Helm chart configurated by Ujstor
+type: application
+version: 1.2.1
+appVersion: "1.10.2"
+
+dependencies:
+- name: gitlab-operator
+  version: 1.2.1
+  repository: "oci://harbor.k3s0.ujstor.com/helm"
